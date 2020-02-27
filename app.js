@@ -10,7 +10,10 @@ mongoose.connect('mongodb+srv://node-shop:'
     + process.env.MONGO_ATLAS_PW +
     '@cluster0-pmvml.mongodb.net/test?retryWrites=true&w=majority');
 
+mongoose.Promise = global.Promise;
+
 app.use(morgan('dev'));
+app.use('/uploads',express.static('uploads'));
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
