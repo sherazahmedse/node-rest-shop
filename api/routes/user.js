@@ -21,6 +21,7 @@ router.post('/signup' , (req,res,next) => {
                 email: req.body.email,
                 password: hash
             });
+            user.save().then().catch()
         
         }
     });
